@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EF Presentes</title>
+    <title>WNND VARIEDADES</title>
 
     <!-- SEO & Social Sharing -->
     <meta
       name="description"
-      content="Procurando loja de presentes e roupas em Planaltina DF? Na EF Presentes você encontra a melhor opção da região! Somos especialistas em presentes criativos e uniformes."
+      content="Procurando loja de variedades, utilidades e presentes em Planaltina DF? Na WNND VARIEDADES você encontra tudo o que precisa com a melhor qualidade e preço!"
     />
 
     <meta
       property="og:title"
-      content="EF Presentes — Loja Completa em Planaltina"
+      content="WNND VARIEDADES — Loja Completa em Planaltina DF"
     />
     <meta
       property="og:description"
-      content="Presentes criativos, cosméticos, moda e uniformes escolares. Aceitamos Cartão Uniforme!"
+      content="A melhor opção de variedades, utilidades domésticas, presentes, cosméticos e eletrônicos em Planaltina DF!"
     />
     <meta property="og:image" content="profile.png" />
     <meta property="og:type" content="website" />
@@ -38,16 +38,17 @@
 
     <style>
       :root {
-        --primary: #c2185b;
-        --primary-light: #e91e80;
-        --accent: #f8bbd0;
-        --accent-gold: #d4a574;
-        --dark-bg: #080305;
+        --primary: #e8302a;
+        --primary-light: #ff5a54;
+        --accent: #f9d0d8;
+        --accent-blue: #1a3fa8;
+        --accent-blue-light: #3b63d4;
+        --dark-bg: #05050e;
         --glass-bg: rgba(255, 255, 255, 0.06);
-        --glass-border: rgba(194, 24, 91, 0.25);
-        --glass-highlight: rgba(248, 187, 208, 0.15);
-        --text-main: #fff5f8;
-        --text-muted: #d4a0b0;
+        --glass-border: rgba(232, 48, 42, 0.3);
+        --glass-highlight: rgba(249, 208, 216, 0.15);
+        --text-main: #fff5f6;
+        --text-muted: #c8b0d0;
       }
 
       * {
@@ -78,17 +79,17 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        background-color: #000000;
+        background-color: #05050e;
         background-image: linear-gradient(
           135deg,
-          #000000 0%,
-          #030105 50%,
-          #000000 100%
+          #05050e 0%,
+          #0a0515 50%,
+          #05050e 100%
         );
         overflow: hidden;
       }
 
-      /* Nebula Cloud 1 */
+      /* Nebula Cloud 1 — Red (primary brand color) */
       .nebula-purple {
         position: absolute;
         top: -30%;
@@ -97,14 +98,14 @@
         height: 160%;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(60, 15, 95, 0.55) 0%,
+          rgba(232, 48, 42, 0.45) 0%,
           transparent 65%
         );
         animation: drift1 25s ease-in-out infinite alternate;
         pointer-events: none;
       }
 
-      /* Nebula Cloud 2 */
+      /* Nebula Cloud 2 — Royal Blue (secondary brand color) */
       .nebula-blue {
         position: absolute;
         top: -40%;
@@ -113,14 +114,14 @@
         height: 180%;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(15, 40, 85, 0.5) 0%,
+          rgba(26, 63, 168, 0.4) 0%,
           transparent 65%
         );
         animation: drift2 32s ease-in-out infinite alternate;
         pointer-events: none;
       }
 
-      /* Nebula Cloud 3 */
+      /* Nebula Cloud 3 — Deep Maroon (depth layer) */
       .nebula-green {
         position: absolute;
         top: -20%;
@@ -129,7 +130,7 @@
         height: 140%;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(15, 75, 60, 0.25) 0%,
+          rgba(59, 99, 212, 0.2) 0%,
           transparent 65%
         );
         animation: drift3 20s ease-in-out infinite alternate;
@@ -169,8 +170,8 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(15, 5, 25, 0.25) 100%
+          rgba(5, 5, 14, 0.82) 0%,
+          rgba(10, 5, 21, 0.2) 100%
         );
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
@@ -281,7 +282,7 @@
         height: 200%;
         background: radial-gradient(
           circle,
-          rgba(194, 24, 91, 0.08) 0%,
+          rgba(232, 48, 42, 0.07) 0%,
           transparent 60%
         );
         z-index: -1;
@@ -309,8 +310,8 @@
         margin: 0 auto 1.2rem;
         border-radius: 50%;
         padding: 4px;
-        background: linear-gradient(135deg, var(--primary), var(--accent-gold));
-        box-shadow: 0 0 25px rgba(194, 24, 91, 0.4);
+        background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+        box-shadow: 0 0 28px rgba(232, 48, 42, 0.5);
       }
 
       .profile-img {
@@ -399,8 +400,8 @@
       .action-btn:hover {
         transform: translateY(-5px) scale(1.02);
         background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(194, 24, 91, 0.4);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: rgba(232, 48, 42, 0.5);
+        box-shadow: 0 10px 20px rgba(26, 63, 168, 0.2);
       }
 
       .action-btn:hover::after {
@@ -418,8 +419,8 @@
       .btn-location i {
         color: #ea4335;
       }
-      .btn-instagram i {
-        color: #e1306c;
+      .btn-ifood i {
+        color: #ea1d2c;
       }
       .btn-contact i {
         color: var(--accent-gold);
@@ -437,7 +438,7 @@
         justify-content: center;
         width: 100%;
         padding: 1.2rem;
-        background: linear-gradient(135deg, var(--primary) 0%, #8e1249 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent-blue) 100%);
         color: #fff;
         text-decoration: none;
         border-radius: 16px;
@@ -446,7 +447,7 @@
         letter-spacing: 0.5px;
         margin-bottom: 2rem;
         transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(194, 24, 91, 0.4);
+        box-shadow: 0 8px 25px rgba(232, 48, 42, 0.45);
         border: none;
         position: relative;
         overflow: hidden;
@@ -476,11 +477,11 @@
 
       .cta-btn:hover {
         transform: translateY(-3px) translateZ(25px);
-        box-shadow: 0 12px 30px rgba(194, 24, 91, 0.6);
+        box-shadow: 0 12px 30px rgba(232, 48, 42, 0.65);
         background: linear-gradient(
           135deg,
           var(--primary-light) 0%,
-          var(--primary) 100%
+          var(--accent-blue) 100%
         );
       }
 
@@ -488,55 +489,48 @@
         left: 100%;
       }
 
-      /* Featured Service */
-      .featured-service {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid var(--glass-border);
+      /* ===== Promo Carousel ===== */
+      .promo-carousel {
+        position: relative;
         border-radius: 16px;
         overflow: hidden;
         margin-bottom: 2rem;
-        position: relative;
+        border: 1px solid var(--glass-border);
         transform: translateZ(15px);
-        transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.3);
+        user-select: none;
+      }
+
+      .carousel-track-wrapper {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+        will-change: transform;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        position: relative;
         cursor: pointer;
       }
 
-      .featured-img-wrapper {
-        position: relative;
-        height: 253px;
-        overflow: hidden;
-        background: linear-gradient(
-          135deg,
-          rgba(194, 24, 91, 0.3),
-          rgba(212, 165, 116, 0.2)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .featured-img-wrapper .featured-icon {
-        font-size: 3rem;
-        color: var(--accent);
-        opacity: 0.6;
-      }
-
-      .featured-img {
+      .carousel-slide img {
         width: 100%;
-        height: 100%;
+        height: 253px;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        display: block;
+        pointer-events: none;
       }
 
-      .featured-service:hover .featured-img {
-        transform: scale(1.05);
-      }
-
-      .featured-badge {
+      .carousel-badge {
         position: absolute;
         top: 10px;
         left: 10px;
-        background: linear-gradient(135deg, var(--primary), var(--accent-gold));
+        background: linear-gradient(135deg, var(--primary), var(--accent-blue));
         color: #fff;
         padding: 4px 12px;
         border-radius: 20px;
@@ -544,47 +538,99 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        box-shadow: 0 2px 10px rgba(194, 24, 91, 0.3);
+        box-shadow: 0 2px 10px rgba(232, 48, 42, 0.4);
         z-index: 10;
+        pointer-events: none;
       }
 
-      .featured-content {
-        padding: 1rem;
+      /* Caption bar below image */
+      .carousel-caption {
+        padding: 0.85rem 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.5rem;
       }
 
-      .featured-text h3 {
+      .carousel-caption-text h3 {
         font-family: "Playfair Display", serif;
-        font-size: 1.05rem;
+        font-size: 1rem;
         font-weight: 600;
-        margin-bottom: 0.2rem;
-      }
-
-      .featured-text p {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-      }
-
-      .featured-action {
-        background: rgba(194, 24, 91, 0.2);
+        margin-bottom: 0.15rem;
         color: var(--text-main);
-        border: none;
-        width: 36px;
-        height: 36px;
+      }
+
+      .carousel-caption-text p {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+      }
+
+      /* Prev / Next arrow buttons */
+      .carousel-btn {
+        position: absolute;
+        top: calc(253px / 2);
+        transform: translateY(-50%);
+        background: rgba(5, 5, 14, 0.55);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        color: #fff;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 20;
+        transition: background 0.25s ease, transform 0.2s ease;
+        font-size: 0.75rem;
+      }
+
+      .carousel-btn:hover {
+        background: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .carousel-btn-prev { left: 8px; }
+      .carousel-btn-next { right: 8px; }
+
+      /* Dot indicators */
+      .carousel-dots {
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        gap: 6px;
+        padding: 0 1rem 0.85rem;
       }
 
-      .featured-service:hover .featured-action {
+      .carousel-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+        padding: 0;
+      }
+
+      .carousel-dot.active {
         background: var(--primary);
-        transform: translateX(3px);
-        box-shadow: 0 0 15px rgba(194, 24, 91, 0.5);
+        transform: scale(1.35);
+      }
+
+      /* Progress bar auto-play indicator */
+      .carousel-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--accent-blue));
+        width: 0%;
+        z-index: 15;
+        border-radius: 0 2px 2px 0;
       }
 
       /* Footer */
@@ -643,7 +689,7 @@
         border-radius: 50%;
         transform: scale(0);
         animation: ripple 0.6s linear;
-        background-color: rgba(248, 187, 208, 0.3);
+        background-color: rgba(232, 48, 42, 0.25);
         pointer-events: none;
       }
 
@@ -671,23 +717,22 @@
         <div class="profile-img-container">
           <img
             src="profile.png"
-            alt="Logo E F Presentes"
+            alt="Logo WNND VARIEDADES"
             class="profile-img"
             fetchpriority="high"
           />
           <div class="profile-status" title="Atendimento Online"></div>
         </div>
-        <h1>EF Presentes</h1>
-        <h2>Presentes, Moda & Uniformes</h2>
+        <h1>WNND VARIEDADES</h1>
+        <h2>Variedades, Utilidades & Presentes</h2>
         <p>
-          A melhor opção da região! Presentes criativos, cosméticos, moda e
-          uniformes escolares. Aceitamos Cartão Uniforme! 🎁🎒
+          A melhor opção em Planaltina DF! Encontre presentes criativos, utilidades domésticas, cosméticos, eletrônicos e muito mais com um atendimento especial. 🎁🏠✨
         </p>
       </section>
 
       <!-- Main CTA: Avaliação no Google -->
       <a
-        href="https://g.page/r/CYIkQveheIS4EBM/review"
+        href="https://www.google.com/search?q=WNND+VARIEDADES+Planaltina&amp;ludocid=7057139829353116110#lrd=0x935a6d0b5878c0ef:0x61efff48d2da71ce,3"
         class="cta-btn"
         target="_blank"
         rel="noopener"
@@ -699,7 +744,7 @@
       <!-- Action Grid -->
       <nav class="action-grid" aria-label="Ações de contato">
         <a
-          href="https://wa.me/556141417660?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20loja%20🎁"
+          href="https://wa.me/5561992593262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20loja%20🎁"
           class="action-btn btn-whatsapp"
           target="_blank"
           rel="noopener"
@@ -718,17 +763,17 @@
           <span>Salvar Contato</span>
         </a>
         <a
-          href="https://instagram.com/efpresentes?igshid=MzRlODBiNWFlZA=="
-          class="action-btn btn-instagram"
+          href="https://www.ifood.com.br/delivery/brasilia-df/wnnd-variedades-setor-residencial-norte-a/25ef1ebc-ea5a-4efd-8700-112da2d11019"
+          class="action-btn btn-ifood"
           target="_blank"
           rel="noopener"
-          aria-label="Acessar Instagram"
+          aria-label="Ver no iFood"
         >
-          <i class="fab fa-instagram"></i>
-          <span>Instagram</span>
+          <i class="fas fa-store"></i>
+          <span>iFood</span>
         </a>
         <a
-          href="https://www.google.com/maps/search/?api=1&query=E+F+Presentes+Planaltina+DF"
+          href="https://maps.app.goo.gl/X5m9gpf9hx3feuzj8"
           class="action-btn btn-location"
           target="_blank"
           rel="noopener"
@@ -739,42 +784,66 @@
         </a>
       </nav>
 
-      <!-- Featured Service -->
-      <article
-        class="featured-service"
-        onclick="
-          window.open(
-            'https://wa.me/556141417660',
-            '_blank',
-          )
-        "
-      >
-        <div class="featured-img-wrapper">
-          <div class="featured-badge">Exclusivo</div>
-          <img
-            src="service.png"
-            alt="Caneca Personalizada"
-            class="featured-img"
-            loading="lazy"
-          />
-        </div>
-        <div class="featured-content">
-          <div class="featured-text">
-            <h3>Caneca Personalizada</h3>
-            <p>Um presente único, criativo e inesquecível! ☕✨</p>
-          </div>
-          <button class="featured-action" aria-label="Ver detalhes">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </article>
+      <!-- Promo Carousel -->
+      <section class="promo-carousel" id="promoCarousel" aria-label="Promoções em destaque">
 
-      <!-- Spacer or remove secondary button area -->
+        <!-- Prev / Next buttons -->
+        <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Próxima">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Track -->
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- Slide 1 -->
+            <div class="carousel-slide" data-href="https://www.ifood.com.br/delivery/brasilia-df/wnnd-variedades-setor-residencial-norte-a/25ef1ebc-ea5a-4efd-8700-112da2d11019">
+              <div class="carousel-badge">iFood 4.9★</div>
+              <img src="service1.jpg" alt="Promoção 1 WNND VARIEDADES" loading="eager" />
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide" data-href="https://wa.me/5561992593262?text=Olá!%20Vi%20a%20promoção%20e%20quero%20saber%20mais!">
+              <div class="carousel-badge">Promoção</div>
+              <img src="service2.jpg" alt="Promoção 2 WNND VARIEDADES" loading="lazy" />
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide" data-href="https://wa.me/5561992593262?text=Olá!%20Vi%20a%20promoção%20e%20quero%20saber%20mais!">
+              <div class="carousel-badge">Exclusivo</div>
+              <img src="service3.jpg" alt="Promoção 3 WNND VARIEDADES" loading="lazy" />
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Caption (updated dynamically) -->
+        <div class="carousel-caption">
+          <div class="carousel-caption-text">
+            <h3 id="carouselTitle">Nossas Variedades &amp; Delivery</h3>
+            <p id="carouselDesc">Os melhores açaís, presentes e eletrônicos entregues na sua casa! 🛵✨</p>
+          </div>
+        </div>
+
+        <!-- Dot indicators -->
+        <div class="carousel-dots" id="carouselDots" aria-label="Navegar slides">
+          <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Auto-play progress bar -->
+        <div class="carousel-progress" id="carouselProgress"></div>
+
+      </section>
 
       <!-- Footer -->
       <footer class="footer">
         <p class="copyright">
-          &copy; <span id="year"></span> E F Presentes. Todos os direitos
+          &copy; <span id="year"></span> WNND VARIEDADES. Todos os direitos
           reservados.
         </p>
         <div class="dev-credit">
@@ -798,11 +867,11 @@
       function downloadVCard() {
         const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:E F Presentes
-ORG:E F Presentes
-TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+556141417660
-URL:https://instagram.com/efpresentes?igshid=MzRlODBiNWFlZA==
-NOTE:Presentes criativos, cestas, personalizados, roupas e uniformes em Planaltina DF
+FN:WNND VARIEDADES
+ORG:WNND VARIEDADES
+TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+5561992593262
+URL:https://maps.app.goo.gl/X5m9gpf9hx3feuzj8
+NOTE:Variedades, utilidades domésticas, presentes, cosméticos e eletrônicos em Planaltina DF.
 END:VCARD`;
         const blob = new Blob([vcardData], {
           type: "text/vcard;charset=utf-8",
@@ -811,7 +880,7 @@ END:VCARD`;
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = "EF_Presentes.vcf";
+        a.download = "WNND_VARIEDADES.vcf";
         document.body.appendChild(a);
         a.click();
         setTimeout(() => {
@@ -839,7 +908,7 @@ END:VCARD`;
       }
 
       document
-        .querySelectorAll(".action-btn, .cta-btn, .featured-service")
+        .querySelectorAll(".action-btn, .cta-btn")
         .forEach((button) => {
           button.addEventListener("mousedown", createRipple);
         });
@@ -870,6 +939,124 @@ END:VCARD`;
           setTimeout(() => (card.style.transition = ""), 200);
         });
       }
+      // ===== Promo Carousel =====
+      (function () {
+        const slides = document.querySelectorAll(".carousel-slide");
+        const track = document.getElementById("carouselTrack");
+        const dots = document.querySelectorAll(".carousel-dot");
+        const prevBtn = document.getElementById("carouselPrev");
+        const nextBtn = document.getElementById("carouselNext");
+        const progress = document.getElementById("carouselProgress");
+        const titleEl = document.getElementById("carouselTitle");
+        const descEl = document.getElementById("carouselDesc");
+        const carousel = document.getElementById("promoCarousel");
+
+        const INTERVAL = 4000; // ms per slide
+        let current = 0;
+        let autoTimer = null;
+        let progressAnim = null;
+
+        const captions = [
+          { title: "Nossas Variedades \u0026 Delivery", desc: "Os melhores a\u00e7a\u00eds, presentes e eletr\u00f4nicos entregues na sua casa! \uD83D\uDEF5\u2728" },
+          { title: "Promo\u00e7\u00f5es Especiais", desc: "Confira nossas ofertas exclusivas pelo WhatsApp! \uD83C\uDF81\uD83D\uDCF1" },
+          { title: "Produtos Exclusivos", desc: "Qualidade e variedade para toda a fam\u00edlia! \uD83C\uDFE0\u2728" },
+        ];
+
+        function goTo(index, skipProgress) {
+          current = (index + slides.length) % slides.length;
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          dots.forEach((d, i) => d.classList.toggle("active", i === current));
+
+          if (titleEl) titleEl.textContent = captions[current].title;
+          if (descEl) descEl.textContent = captions[current].desc;
+
+          if (!skipProgress) startProgress();
+        }
+
+        function startProgress() {
+          // Reset
+          progress.style.transition = "none";
+          progress.style.width = "0%";
+          // Force reflow
+          progress.offsetWidth;
+          progress.style.transition = `width ${INTERVAL}ms linear`;
+          progress.style.width = "100%";
+        }
+
+        function startAuto() {
+          clearInterval(autoTimer);
+          autoTimer = setInterval(() => goTo(current + 1), INTERVAL);
+        }
+
+        function stopAuto() {
+          clearInterval(autoTimer);
+          progress.style.transition = "none";
+        }
+
+        // Arrow buttons
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          stopAuto();
+          goTo(current - 1);
+          startAuto();
+        });
+
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          stopAuto();
+          goTo(current + 1);
+          startAuto();
+        });
+
+        // Dot navigation
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            e.stopPropagation();
+            stopAuto();
+            goTo(parseInt(dot.dataset.index));
+            startAuto();
+          });
+        });
+
+        // Click slide => open link
+        slides.forEach((slide) => {
+          slide.addEventListener("click", () => {
+            const href = slide.dataset.href;
+            if (href) window.open(href, "_blank", "noopener");
+          });
+        });
+
+        // Pause on hover / focus
+        carousel.addEventListener("mouseenter", stopAuto);
+        carousel.addEventListener("mouseleave", () => { goTo(current, true); startAuto(); });
+        carousel.addEventListener("focusin", stopAuto);
+        carousel.addEventListener("focusout", () => { startAuto(); });
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        let touchDelta = 0;
+        carousel.addEventListener("touchstart", (e) => {
+          touchStartX = e.touches[0].clientX;
+          stopAuto();
+        }, { passive: true });
+        carousel.addEventListener("touchmove", (e) => {
+          touchDelta = e.touches[0].clientX - touchStartX;
+        }, { passive: true });
+        carousel.addEventListener("touchend", () => {
+          if (Math.abs(touchDelta) > 40) {
+            goTo(touchDelta < 0 ? current + 1 : current - 1);
+          } else {
+            goTo(current, true);
+          }
+          touchDelta = 0;
+          startAuto();
+        });
+
+        // Init
+        goTo(0);
+        startAuto();
+      })();
     </script>
   </body>
 </html>
