@@ -44,8 +44,8 @@
         --accent-blue: #1a3fa8;
         --accent-blue-light: #3b63d4;
         --dark-bg: #05050e;
-        --glass-bg: rgba(255, 255, 255, 0.06);
-        --glass-border: rgba(232, 48, 42, 0.3);
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(59, 99, 212, 0.3);
         --glass-highlight: rgba(249, 208, 216, 0.15);
         --text-main: #fff5f6;
         --text-muted: #c8b0d0;
@@ -89,7 +89,7 @@
         overflow: hidden;
       }
 
-      /* Nebula Cloud 1 — Red (primary brand color) */
+      /* Nebula Cloud 1 — Blue (previously Red) */
       .nebula-purple {
         position: absolute;
         top: -30%;
@@ -98,7 +98,7 @@
         height: 160%;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(232, 48, 42, 0.45) 0%,
+          rgba(26, 63, 168, 0.45) 0%,
           transparent 65%
         );
         animation: drift1 25s ease-in-out infinite alternate;
@@ -170,8 +170,8 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(5, 5, 14, 0.82) 0%,
-          rgba(10, 5, 21, 0.2) 100%
+          rgba(5, 5, 14, 0.45) 0%,
+          rgba(10, 5, 21, 0.1) 100%
         );
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
@@ -259,8 +259,8 @@
         padding: 2.5rem 1.5rem;
         width: 100%;
         max-width: 420px;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         box-shadow:
           0 30px 60px rgba(0, 0, 0, 0.4),
           inset 0 1px 0 var(--glass-highlight);
@@ -310,8 +310,8 @@
         margin: 0 auto 1.2rem;
         border-radius: 50%;
         padding: 4px;
-        background: linear-gradient(135deg, var(--primary), var(--accent-blue));
-        box-shadow: 0 0 28px rgba(232, 48, 42, 0.5);
+        background: linear-gradient(135deg, var(--accent-blue-light), var(--accent-blue));
+        box-shadow: 0 0 28px rgba(26, 63, 168, 0.5);
       }
 
       .profile-img {
@@ -400,7 +400,7 @@
       .action-btn:hover {
         transform: translateY(-5px) scale(1.02);
         background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(232, 48, 42, 0.5);
+        border-color: rgba(59, 99, 212, 0.5);
         box-shadow: 0 10px 20px rgba(26, 63, 168, 0.2);
       }
 
@@ -425,11 +425,186 @@
       .btn-contact i {
         color: var(--accent-gold);
       }
+      .btn-wifi i {
+        color: #00c9ff;
+      }
 
       .action-btn span {
         font-size: 0.85rem;
         font-weight: 500;
       }
+
+      /* Wi-Fi Full-Width Button */
+      .btn-wifi-full {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        background: linear-gradient(135deg, rgba(0,201,255,0.12) 0%, rgba(0,100,200,0.12) 100%);
+        border: 1px solid rgba(0, 201, 255, 0.35);
+        border-radius: 16px;
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+        margin-top: 0;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0.3px;
+      }
+      .btn-wifi-full i { color: #00c9ff; font-size: 1.3rem; }
+      .btn-wifi-full:hover {
+        background: linear-gradient(135deg, rgba(0,201,255,0.22) 0%, rgba(0,100,200,0.22) 100%);
+        border-color: rgba(0, 201, 255, 0.6);
+        box-shadow: 0 8px 24px rgba(0, 201, 255, 0.2);
+        transform: translateY(-3px);
+      }
+
+      /* Wi-Fi Modal Overlay */
+      .wifi-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 5, 14, 0.75);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .wifi-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      /* Wi-Fi Modal Card */
+      .wifi-modal {
+        background: rgba(10, 12, 30, 0.95);
+        border: 1px solid rgba(0, 201, 255, 0.3);
+        border-radius: 24px;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: 360px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,201,255,0.08);
+        transform: translateY(24px) scale(0.96);
+        transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+        text-align: center;
+      }
+      .wifi-overlay.active .wifi-modal {
+        transform: translateY(0) scale(1);
+      }
+
+      .wifi-modal-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00c9ff, #0064c8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        box-shadow: 0 6px 20px rgba(0,201,255,0.35);
+      }
+      .wifi-modal-icon i { color: #fff; font-size: 1.8rem; }
+
+      .wifi-modal h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.3rem;
+      }
+      .wifi-modal .wifi-subtitle {
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* QR Code */
+      .wifi-qr {
+        border-radius: 12px;
+        overflow: hidden;
+        display: inline-block;
+        border: 2px solid rgba(0,201,255,0.25);
+        margin-bottom: 1.4rem;
+        background: #fff;
+        padding: 6px;
+      }
+      .wifi-qr img { display: block; width: 160px; height: 160px; }
+
+      /* Info rows */
+      .wifi-info-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.6rem;
+        text-align: left;
+        gap: 0.5rem;
+      }
+      .wifi-info-label {
+        font-size: 0.7rem;
+        color: rgba(255,255,255,0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        display: block;
+        margin-bottom: 2px;
+      }
+      .wifi-info-value {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #fff;
+        word-break: break-all;
+      }
+      .wifi-info-value.password { color: #00c9ff; }
+
+      /* Copy button */
+      .wifi-copy-btn {
+        background: rgba(0,201,255,0.1);
+        border: 1px solid rgba(0,201,255,0.3);
+        border-radius: 8px;
+        color: #00c9ff;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        transition: background 0.2s;
+        flex-shrink: 0;
+      }
+      .wifi-copy-btn:hover { background: rgba(0,201,255,0.2); }
+      .wifi-copy-btn.copied { background: rgba(76,175,80,0.2); border-color: #4caf50; color: #4caf50; }
+
+      /* Close button */
+      .wifi-close-btn {
+        margin-top: 1.2rem;
+        width: 100%;
+        padding: 0.9rem;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        color: rgba(255,255,255,0.7);
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .wifi-close-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
 
       /* Main CTA Button */
       .cta-btn {
@@ -438,7 +613,7 @@
         justify-content: center;
         width: 100%;
         padding: 1.2rem;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--accent-blue) 100%);
+        background: linear-gradient(135deg, var(--accent-blue-light) 0%, var(--accent-blue) 100%);
         color: #fff;
         text-decoration: none;
         border-radius: 16px;
@@ -447,7 +622,7 @@
         letter-spacing: 0.5px;
         margin-bottom: 2rem;
         transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(232, 48, 42, 0.45);
+        box-shadow: 0 8px 25px rgba(26, 63, 168, 0.45);
         border: none;
         position: relative;
         overflow: hidden;
@@ -477,10 +652,10 @@
 
       .cta-btn:hover {
         transform: translateY(-3px) translateZ(25px);
-        box-shadow: 0 12px 30px rgba(232, 48, 42, 0.65);
+        box-shadow: 0 12px 30px rgba(26, 63, 168, 0.65);
         background: linear-gradient(
           135deg,
-          var(--primary-light) 0%,
+          #4d75e2 0%,
           var(--accent-blue) 100%
         );
       }
@@ -530,7 +705,7 @@
         position: absolute;
         top: 10px;
         left: 10px;
-        background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+        background: linear-gradient(135deg, var(--accent-blue-light), var(--accent-blue));
         color: #fff;
         padding: 4px 12px;
         border-radius: 20px;
@@ -538,7 +713,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        box-shadow: 0 2px 10px rgba(232, 48, 42, 0.4);
+        box-shadow: 0 2px 10px rgba(26, 63, 168, 0.4);
         z-index: 10;
         pointer-events: none;
       }
@@ -589,8 +764,8 @@
       }
 
       .carousel-btn:hover {
-        background: var(--primary);
-        border-color: var(--primary);
+        background: var(--accent-blue-light);
+        border-color: var(--accent-blue-light);
       }
 
       .carousel-btn-prev { left: 8px; }
@@ -617,7 +792,7 @@
       }
 
       .carousel-dot.active {
-        background: var(--primary);
+        background: var(--accent-blue-light);
         transform: scale(1.35);
       }
 
@@ -627,7 +802,7 @@
         bottom: 0;
         left: 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--primary), var(--accent-blue));
+        background: linear-gradient(90deg, var(--accent-blue-light), var(--accent-blue));
         width: 0%;
         z-index: 15;
         border-radius: 0 2px 2px 0;
@@ -681,6 +856,21 @@
         .action-grid {
           gap: 0.8rem;
         }
+        .feature-icon-circle {
+          width: 44px;
+          height: 44px;
+        }
+        .feature-icon-circle i {
+          font-size: 1.15rem;
+        }
+        .feature-text {
+          font-size: 0.52rem;
+          letter-spacing: 0px;
+        }
+        .features-banner {
+          font-size: 0.75rem;
+          letter-spacing: 0.5px;
+        }
       }
 
       /* Ripple Animation */
@@ -698,6 +888,74 @@
           transform: scale(4);
           opacity: 0;
         }
+      }
+
+      /* Features section under header */
+      .features-container {
+        margin: 1.8rem 0 1.2rem;
+        text-align: center;
+        transform: translateZ(20px);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.35rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .feature-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .feature-icon-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f44d12, #ff7826);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(244, 77, 18, 0.45);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+      }
+
+      .feature-item:hover .feature-icon-circle {
+        transform: scale(1.15) translateY(-3px);
+        box-shadow: 0 8px 25px rgba(244, 77, 18, 0.65);
+      }
+
+      .feature-icon-circle i {
+        color: #ffffff;
+        font-size: 1.4rem;
+      }
+
+      .feature-text {
+        font-size: 0.58rem;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.25;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        text-align: center;
+      }
+
+      .features-banner {
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 1.4rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        position: relative;
+        padding: 0.7rem 0.2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
       }
     </style>
   </head>
@@ -724,9 +982,43 @@
           <div class="profile-status" title="Atendimento Online"></div>
         </div>
         <h1>WNND VARIEDADES</h1>
-        <h2>Variedades, Utilidades & Presentes</h2>
+        <h2>Utilidades, presentes & eletrônicos</h2>
+
+        <!-- Features Icons Block -->
+        <div class="features-container">
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <span class="feature-text">ATENDIMENTO<br>COM ALEGRIA</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <span class="feature-text">QUALIDADE<br>SEMPRE</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <span class="feature-text">TUDO PARA<br>VOCÊ</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <span class="feature-text">AQUI VOCÊ<br>ENCONTRA</span>
+            </div>
+          </div>
+          <div class="features-banner">
+            TUDO QUE VOCÊ PRECISA, EM UM SÓ LUGAR!
+          </div>
+        </div>
+
         <p>
-          A melhor opção em Planaltina DF! Encontre presentes criativos, utilidades domésticas, cosméticos, eletrônicos e muito mais com um atendimento especial. 🎁🏠✨
+          Sua melhor opção em Planaltina! ✨<br>Cópias, impressões, sorvetes, açaí, presentes, eletrônicos e muito mais, com qualidade e atendimento especial. 🍦🖨️🎁
         </p>
       </section>
 
@@ -783,6 +1075,66 @@
           <span>Localização</span>
         </a>
       </nav>
+
+      <!-- Wi-Fi Clientes Button -->
+      <button
+        class="btn-wifi-full"
+        id="btnWifi"
+        onclick="openWifi()"
+        aria-label="Acessar Wi-Fi da loja"
+      >
+        <i class="fas fa-wifi"></i>
+        <span>Wi-Fi Clientes</span>
+      </button>
+
+      <!-- Wi-Fi Modal -->
+      <div class="wifi-overlay" id="wifiOverlay" role="dialog" aria-modal="true" aria-label="Informações do Wi-Fi">
+        <div class="wifi-modal">
+          <div class="wifi-modal-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Wi-Fi Grátis!</h3>
+          <p class="wifi-subtitle">Conecte-se à nossa rede</p>
+
+          <!-- QR Code para conexão rápida -->
+          <div class="wifi-qr">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=WIFI:T:WPA;S:WNND_VARIEDADES;P:992593262Nay;;"
+              alt="QR Code Wi-Fi WNND VARIEDADES"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Rede -->
+          <div class="wifi-info-row">
+            <div>
+              <span class="wifi-info-label">Rede (SSID)</span>
+              <span class="wifi-info-value">WNND_VARIEDADES</span>
+            </div>
+          </div>
+
+          <!-- Segurança -->
+          <div class="wifi-info-row">
+            <div>
+              <span class="wifi-info-label">Segurança</span>
+              <span class="wifi-info-value">WPA</span>
+            </div>
+          </div>
+
+          <!-- Senha -->
+          <div class="wifi-info-row">
+            <div>
+              <span class="wifi-info-label">Senha</span>
+              <span class="wifi-info-value password" id="wifiPassword">992593262Nay</span>
+            </div>
+            <button class="wifi-copy-btn" id="wifiCopyBtn" onclick="copyWifiPassword()">
+              <i class="fas fa-copy"></i> Copiar
+            </button>
+          </div>
+
+          <button class="wifi-close-btn" onclick="closeWifi()">Fechar</button>
+        </div>
+      </div>
 
       <!-- Promo Carousel -->
       <section class="promo-carousel" id="promoCarousel" aria-label="Promoções em destaque">
@@ -1057,6 +1409,46 @@ END:VCARD`;
         goTo(0);
         startAuto();
       })();
+    </script>
+
+    <script>
+      /* ===== Wi-Fi Modal ===== */
+      function openWifi() {
+        document.getElementById('wifiOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeWifi() {
+        document.getElementById('wifiOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      function copyWifiPassword() {
+        const pwd = document.getElementById('wifiPassword').textContent;
+        navigator.clipboard.writeText(pwd).then(() => {
+          const btn = document.getElementById('wifiCopyBtn');
+          btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+            btn.classList.remove('copied');
+          }, 2500);
+        }).catch(() => {
+          // Fallback for older browsers
+          const el = document.createElement('textarea');
+          el.value = pwd;
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+        });
+      }
+      // Close modal clicking outside
+      document.getElementById('wifiOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeWifi();
+      });
+      // Close with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeWifi();
+      });
     </script>
   </body>
 </html>
