@@ -115,10 +115,14 @@
       </button>
     </div>
 
-    <a class="back-btn" href="javascript:history.back()">Voltar</a>
+    <a class="back-btn" href="javascript:void(0)" onclick="goBack()">Voltar</a>
   </div>
 
   <script>
+    function goBack() {
+      if (document.referrer) { window.location.href = document.referrer; }
+      else { window.location.href = 'index.html'; }
+    }
     function copyPassword() {
       const pwd = document.getElementById('wifiPassword').textContent;
       navigator.clipboard.writeText(pwd).then(() => {
