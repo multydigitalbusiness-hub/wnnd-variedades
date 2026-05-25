@@ -67,38 +67,10 @@
         padding: 2.5rem 1rem;
       }
 
-      /* Floating SVGs in background */
-      .bg-decor {
-        position: fixed;
-        color: rgba(255, 255, 255, 0.22);
-        width: 48px;
-        height: 48px;
-        pointer-events: none;
-        animation: float-slow 7s ease-in-out infinite alternate;
-        transition: color 0.3s ease;
-        z-index: -1;
-      }
-
-      @keyframes float-slow {
-        0% { transform: translateY(0) rotate(0deg) scale(1); }
-        100% { transform: translateY(-16px) rotate(12deg) scale(1.05); }
-      }
-
-      .bg-left-1 { top: 12%; left: 10%; }
-      .bg-left-2 { top: 35%; left: 22%; animation-delay: -2s; animation-duration: 9s; }
-      .bg-left-3 { top: 58%; left: 8%; animation-delay: -4s; animation-duration: 8s; }
-      .bg-left-4 { top: 82%; left: 20%; animation-delay: -6s; animation-duration: 10s; }
-
-      @media (max-width: 768px) {
-        .bg-decor {
-          display: none;
-        }
-      }
-
       /* Main Card Styled like the white central card of the flyer */
       .glass-card {
         background: #ffffff url("fundoCard.png") center center / cover no-repeat;
-        border: 6px solid var(--primary-orange);
+        border: 6px solid var(--primary-red);
         border-radius: 28px;
         padding: 2.5rem 1.5rem;
         width: 100%;
@@ -244,7 +216,7 @@
         justify-content: center;
         width: 100%;
         padding: 1.1rem;
-        background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
+        background: var(--primary-red);
         color: #ffffff;
         text-decoration: none;
         border-radius: 16px;
@@ -253,8 +225,8 @@
         letter-spacing: 0.5px;
         margin-bottom: 1.5rem;
         transition: all 0.3s ease;
-        box-shadow: 0 6px 18px rgba(242, 90, 34, 0.3);
-        border: none;
+        box-shadow: 0 6px 18px rgba(209, 25, 25, 0.3);
+        border: 3px solid var(--primary-blue);
         position: relative;
         overflow: hidden;
         transform: translateZ(25px);
@@ -283,8 +255,8 @@
 
       .cta-btn:hover {
         transform: translateY(-3px) translateZ(25px);
-        box-shadow: 0 10px 22px rgba(242, 90, 34, 0.45);
-        background: linear-gradient(135deg, #ff6e3b 0%, #e62222 100%);
+        box-shadow: 0 10px 22px rgba(209, 25, 25, 0.45);
+        background: #e62222;
       }
 
       .cta-btn:hover::before {
@@ -362,10 +334,10 @@
       /* ===== Promo Carousel ===== */
       .promo-carousel {
         position: relative;
-        border-radius: 16px;
+        border-radius: 16px 16px 0 0;
         overflow: hidden;
         margin-bottom: 2rem;
-        border: 1px solid var(--border-color);
+        border: 3px solid var(--primary-blue);
         transform: translateZ(15px);
         background: var(--bg-light);
         user-select: none;
@@ -375,6 +347,7 @@
       .carousel-track-wrapper {
         overflow: hidden;
         width: 100%;
+        border-radius: 12px 12px 0 0;
       }
 
       .carousel-track {
@@ -394,23 +367,6 @@
         height: 250px;
         object-fit: cover;
         display: block;
-        pointer-events: none;
-      }
-
-      .carousel-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));
-        color: #ffffff;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 2px 10px rgba(242, 90, 34, 0.3);
-        z-index: 10;
         pointer-events: none;
       }
 
@@ -588,28 +544,6 @@
     </style>
   </head>
   <body>
-    <!-- Floating Decorations -->
-    <svg class="bg-decor bg-left-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/>
-      <path d="M6 8h12v1a6 6 0 0 1-12 0V8z"/>
-      <path d="M18 9l-6 13-6-13"/>
-    </svg>
-    <svg class="bg-decor bg-left-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="6" y="2" width="12" height="14" rx="6" ry="6"/>
-      <path d="M12 16v6"/>
-      <line x1="10" y1="16" x2="10" y2="22"/>
-      <line x1="14" y1="16" x2="14" y2="22"/>
-    </svg>
-    <svg class="bg-decor bg-left-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 10c0-3.5 3-5 5-5s4 1.5 4 1.5S14 5 16 5s5 1.5 5 5v1a8 8 0 0 1-16 0v-1z"/>
-      <path d="M12 19v3"/>
-      <path d="M8 22h8"/>
-    </svg>
-    <svg class="bg-decor bg-left-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/>
-      <path d="M6 8h12v1a6 6 0 0 1-12 0V8z"/>
-      <path d="M18 9l-6 13-6-13"/>
-    </svg>
 
     <!-- Main Card -->
     <main class="glass-card" id="card3d">
@@ -754,20 +688,17 @@
 
             <!-- Slide 1 -->
             <div class="carousel-slide" data-href="https://wa.me/5561992593262?text=Olá!%20Vi%20a%20promoção%20e%20quero%20saber%20mais!">
-              <div class="carousel-badge">Promoção</div>
-              <img src="service1.jpg" alt="Promoção 1 WNND VARIEDADES" loading="eager" />
+              <img src="service1.webp" alt="Promoção 1 WNND VARIEDADES" loading="eager" />
             </div>
 
             <!-- Slide 2 -->
             <div class="carousel-slide" data-href="https://wa.me/5561992593262?text=Olá!%20Vi%20a%20promoção%20e%20quero%20saber%20mais!">
-              <div class="carousel-badge">Promoção</div>
-              <img src="service2.jpg" alt="Promoção 2 WNND VARIEDADES" loading="lazy" />
+              <img src="service2.webp" alt="Promoção 2 WNND VARIEDADES" loading="lazy" />
             </div>
 
             <!-- Slide 3 -->
             <div class="carousel-slide" data-href="https://wa.me/5561992593262?text=Olá!%20Vi%20a%20promoção%20e%20quero%20saber%20mais!">
-              <div class="carousel-badge">Exclusivo</div>
-              <img src="service3.jpg" alt="Promoção 3 WNND VARIEDADES" loading="lazy" />
+              <img src="service3.webp" alt="Promoção 3 WNND VARIEDADES" loading="lazy" />
             </div>
 
           </div>
