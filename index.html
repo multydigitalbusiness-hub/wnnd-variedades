@@ -356,180 +356,8 @@
         color: var(--text-dark);
       }
 
-      /* Wi-Fi Full-Width Button */
-      .btn-wifi-full {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-        width: 100%;
-        padding: 1rem 1.2rem;
-        background: #ffffff;
-        border: 3px solid var(--primary-blue);
-        border-radius: 16px;
-        color: var(--primary-blue);
-        text-decoration: none;
-        font-size: 0.92rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        position: relative;
-        overflow: hidden;
-        margin-top: 0.4rem;
-        font-family: "Poppins", sans-serif;
-        letter-spacing: 0.3px;
-        box-shadow: 0 4px 12px rgba(0, 132, 255, 0.15);
-      }
-      .btn-wifi-full i { color: var(--primary-blue); font-size: 1.2rem; }
-      .btn-wifi-full:hover {
-        background: #f0f6ff;
-        border-color: var(--primary-blue);
-        box-shadow: 0 8px 20px rgba(0, 132, 255, 0.25);
-        transform: translateY(-2px);
-      }
-
-      /* Wi-Fi Modal Overlay */
-      .wifi-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(10, 12, 30, 0.45);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-      }
-      .wifi-overlay.active {
-        opacity: 1;
-        pointer-events: all;
-      }
-
-      /* Wi-Fi Modal Card */
-      .wifi-modal {
-        background: #ffffff;
-        border: 4px solid var(--primary-orange);
-        border-radius: 24px;
-        padding: 2.2rem 1.6rem;
-        width: 100%;
-        max-width: 360px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.18), 0 0 30px rgba(0,0,0,0.05);
-        transform: translateY(24px) scale(0.96);
-        transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
-        text-align: center;
-      }
-      .wifi-overlay.active .wifi-modal {
-        transform: translateY(0) scale(1);
-      }
-
-      .wifi-modal-icon {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary-blue), #005eff);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        box-shadow: 0 6px 18px rgba(0,132,255,0.22);
-      }
-      .wifi-modal-icon i { color: #ffffff; font-size: 1.6rem; }
-
-      .wifi-modal h3 {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.35rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        margin-bottom: 0.2rem;
-      }
-      .wifi-modal .wifi-subtitle {
-        font-size: 0.76rem;
-        color: var(--primary-orange);
-        margin-bottom: 1.4rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-      }
-
-      /* QR Code */
-      .wifi-qr {
-        border-radius: 12px;
-        overflow: hidden;
-        display: inline-block;
-        border: 2px solid rgba(0, 132, 255, 0.15);
-        margin-bottom: 1.4rem;
-        background: #ffffff;
-        padding: 6px;
-      }
-      .wifi-qr img { display: block; width: 150px; height: 150px; }
-
-      /* Info rows */
-      .wifi-info-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: var(--bg-light);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 0.7rem 0.95rem;
-        margin-bottom: 0.6rem;
-        text-align: left;
-        gap: 0.5rem;
-      }
-      .wifi-info-label {
-        font-size: 0.7rem;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        display: block;
-        margin-bottom: 2px;
-        font-weight: 600;
-      }
-      .wifi-info-value {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        word-break: break-all;
-      }
-      .wifi-info-value.password { color: var(--primary-orange); }
-
-      /* Copy button */
-      .wifi-copy-btn {
-        background: rgba(0, 132, 255, 0.08);
-        border: 1px solid rgba(0, 132, 255, 0.2);
-        border-radius: 8px;
-        color: var(--primary-blue);
-        padding: 0.35rem 0.65rem;
-        font-size: 0.75rem;
-        cursor: pointer;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        transition: all 0.2s;
-        flex-shrink: 0;
-      }
-      .wifi-copy-btn:hover { background: var(--primary-blue); color: #ffffff; }
-      .wifi-copy-btn.copied { background: rgba(76,175,80,0.15); border-color: #4caf50; color: #4caf50; }
-
-      /* Close button */
-      .wifi-close-btn {
-        margin-top: 1.1rem;
-        width: 100%;
-        padding: 0.85rem;
-        background: var(--bg-light);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        color: var(--text-muted);
-        font-family: "Poppins", sans-serif;
-        font-size: 0.88rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .wifi-close-btn:hover { background: #e2e8f0; color: var(--text-dark); }
+      .btn-wifi i { color: var(--primary-blue); }
+      .btn-cardapio i { color: var(--primary-orange); }
 
       /* ===== Promo Carousel ===== */
       .promo-carousel {
@@ -889,67 +717,25 @@
           <i class="fas fa-map-marker-alt"></i>
           <span>Localização</span>
         </a>
+        <a
+          href="wifi.html"
+          target="_blank"
+          class="action-btn btn-wifi"
+          aria-label="Acessar Wi-Fi da loja"
+        >
+          <i class="fas fa-wifi"></i>
+          <span>Wi-Fi Clientes</span>
+        </a>
+        <a
+          href="cardapio.html"
+          target="_blank"
+          class="action-btn btn-cardapio"
+          aria-label="Ver cardápio"
+        >
+          <i class="fas fa-book-open"></i>
+          <span>Cardápio</span>
+        </a>
       </nav>
-
-      <!-- Wi-Fi Clientes Button -->
-      <button
-        class="btn-wifi-full"
-        id="btnWifi"
-        onclick="openWifi()"
-        aria-label="Acessar Wi-Fi da loja"
-      >
-        <i class="fas fa-wifi"></i>
-        <span>Wi-Fi Clientes</span>
-      </button>
-
-      <!-- Wi-Fi Modal -->
-      <div class="wifi-overlay" id="wifiOverlay" role="dialog" aria-modal="true" aria-label="Informações do Wi-Fi">
-        <div class="wifi-modal">
-          <div class="wifi-modal-icon">
-            <i class="fas fa-wifi"></i>
-          </div>
-          <h3>Wi-Fi Grátis!</h3>
-          <p class="wifi-subtitle">Conecte-se à nossa rede</p>
-
-          <!-- QR Code para conexão rápida -->
-          <div class="wifi-qr">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=WIFI:T:WPA;S:WNND_VARIEDADES;P:992593262Nay;;"
-              alt="QR Code Wi-Fi WNND VARIEDADES"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- Rede -->
-          <div class="wifi-info-row">
-            <div>
-              <span class="wifi-info-label">Rede (SSID)</span>
-              <span class="wifi-info-value">WNND_VARIEDADES</span>
-            </div>
-          </div>
-
-          <!-- Segurança -->
-          <div class="wifi-info-row">
-            <div>
-              <span class="wifi-info-label">Segurança</span>
-              <span class="wifi-info-value">WPA</span>
-            </div>
-          </div>
-
-          <!-- Senha -->
-          <div class="wifi-info-row">
-            <div>
-              <span class="wifi-info-label">Senha</span>
-              <span class="wifi-info-value password" id="wifiPassword">992593262Nay</span>
-            </div>
-            <button class="wifi-copy-btn" id="wifiCopyBtn" onclick="copyWifiPassword()">
-              <i class="fas fa-copy"></i> Copiar
-            </button>
-          </div>
-
-          <button class="wifi-close-btn" onclick="closeWifi()">Fechar</button>
-        </div>
-      </div>
 
       <!-- Promo Carousel -->
       <section class="promo-carousel" id="promoCarousel" aria-label="Promoções em destaque">
@@ -1224,46 +1010,6 @@ END:VCARD`;
         goTo(0);
         startAuto();
       })();
-    </script>
-
-    <script>
-      /* ===== Wi-Fi Modal ===== */
-      function openWifi() {
-        document.getElementById('wifiOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeWifi() {
-        document.getElementById('wifiOverlay').classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      function copyWifiPassword() {
-        const pwd = document.getElementById('wifiPassword').textContent;
-        navigator.clipboard.writeText(pwd).then(() => {
-          const btn = document.getElementById('wifiCopyBtn');
-          btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-          btn.classList.add('copied');
-          setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
-            btn.classList.remove('copied');
-          }, 2500);
-        }).catch(() => {
-          // Fallback for older browsers
-          const el = document.createElement('textarea');
-          el.value = pwd;
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-        });
-      }
-      // Close modal clicking outside
-      document.getElementById('wifiOverlay').addEventListener('click', function(e) {
-        if (e.target === this) closeWifi();
-      });
-      // Close with Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeWifi();
-      });
     </script>
   </body>
 </html>

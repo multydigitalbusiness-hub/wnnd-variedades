@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Wi-Fi - WNND VARIEDADES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--primary-blue, #0084ff);
+      color: #2c3e50;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .wifi-card {
+      background: #fff;
+      border: 4px solid #f25a22;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    }
+    .wifi-icon {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0084ff, #005eff);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 6px 18px rgba(0,132,255,0.22);
+    }
+    .wifi-icon i { color: #fff; font-size: 1.6rem; }
+    h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.2rem; }
+    .wifi-subtitle {
+      font-size: 0.76rem; color: #f25a22; margin-bottom: 1.4rem;
+      text-transform: uppercase; letter-spacing: 1px; font-weight: 700;
+    }
+    .wifi-qr {
+      border-radius: 12px; overflow: hidden; display: inline-block;
+      border: 2px solid rgba(0,132,255,0.15); margin-bottom: 1.4rem;
+      background: #fff; padding: 6px;
+    }
+    .wifi-qr img { display: block; width: 160px; height: 160px; }
+    .info-row {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #f7f9fc; border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px; padding: 0.7rem 0.95rem; margin-bottom: 0.6rem;
+      text-align: left; gap: 0.5rem;
+    }
+    .info-label {
+      font-size: 0.7rem; color: #5a6b82;
+      text-transform: uppercase; letter-spacing: 0.8px; display: block; margin-bottom: 2px; font-weight: 600;
+    }
+    .info-value { font-size: 0.9rem; font-weight: 700; color: #2c3e50; word-break: break-all; }
+    .info-value.password { color: #f25a22; }
+    .copy-btn {
+      background: rgba(0,132,255,0.08); border: 1px solid rgba(0,132,255,0.2);
+      border-radius: 8px; color: #0084ff; padding: 0.35rem 0.65rem;
+      font-size: 0.75rem; cursor: pointer; font-family: "Poppins", sans-serif;
+      font-weight: 700; transition: all 0.2s; flex-shrink: 0;
+    }
+    .copy-btn:hover { background: #0084ff; color: #fff; }
+    .copy-btn.copied { background: rgba(76,175,80,0.15); border-color: #4caf50; color: #4caf50; }
+    .back-btn {
+      margin-top: 1.1rem; width: 100%; padding: 0.85rem;
+      background: #f7f9fc; border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px; color: #5a6b82;
+      font-family: "Poppins", sans-serif; font-size: 0.88rem;
+      font-weight: 600; cursor: pointer; transition: all 0.2s;
+      text-decoration: none; display: inline-block;
+    }
+    .back-btn:hover { background: #e2e8f0; color: #2c3e50; }
+  </style>
+</head>
+<body>
+  <div class="wifi-card">
+    <div class="wifi-icon"><i class="fas fa-wifi"></i></div>
+    <h3>Wi-Fi Grátis!</h3>
+    <p class="wifi-subtitle">Conecte-se à nossa rede</p>
+
+    <div class="wifi-qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=WIFI:T:WPA;S:WNND_VARIEDADES;P:992593262Nay;;" alt="QR Code Wi-Fi" />
+    </div>
+
+    <div class="info-row">
+      <div>
+        <span class="info-label">Rede (SSID)</span>
+        <span class="info-value">WNND_VARIEDADES</span>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div>
+        <span class="info-label">Segurança</span>
+        <span class="info-value">WPA</span>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div>
+        <span class="info-label">Senha</span>
+        <span class="info-value password" id="wifiPassword">992593262Nay</span>
+      </div>
+      <button class="copy-btn" id="wifiCopyBtn" onclick="copyPassword()">
+        <i class="fas fa-copy"></i> Copiar
+      </button>
+    </div>
+
+    <a class="back-btn" href="javascript:history.back()">Voltar</a>
+  </div>
+
+  <script>
+    function copyPassword() {
+      const pwd = document.getElementById('wifiPassword').textContent;
+      navigator.clipboard.writeText(pwd).then(() => {
+        const btn = document.getElementById('wifiCopyBtn');
+        btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+          btn.classList.remove('copied');
+        }, 2500);
+      }).catch(() => {
+        const el = document.createElement('textarea');
+        el.value = pwd;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      });
+    }
+  </script>
+</body>
+</html>
