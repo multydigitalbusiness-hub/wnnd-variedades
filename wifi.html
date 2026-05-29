@@ -88,7 +88,7 @@
     <p class="wifi-subtitle">Conecte-se à nossa rede</p>
 
     <div class="wifi-qr">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=WIFI:T:WPA;S:WNND_VARIEDADES;P:992593262Nay;;" alt="QR Code Wi-Fi" />
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=WIFI:T:WPA;S:WNND_VARIEDADES;P:992593262Nay;" alt="QR Code Wi-Fi" />
     </div>
 
     <div class="info-row">
@@ -135,6 +135,13 @@
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
+        const btn = document.getElementById('wifiCopyBtn');
+        btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+          btn.classList.remove('copied');
+        }, 2500);
       });
     }
   </script>
